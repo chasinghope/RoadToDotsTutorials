@@ -4,6 +4,7 @@ using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using Unity.Mathematics;
+using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -41,6 +42,8 @@ public unsafe class BatchRendererGroupSetup : MonoBehaviour
     private NativeArray<float4> sysmemBuffer; //系统内存的Buffer，用于填充GPU的InstanceGraphicsBuffer
     
     private bool initialized = false;
+
+    static readonly ProfilerMarker profilerMarker = new ProfilerMarker("BatchRendererGroupSetupTest");
 
     //创建一个NativeArray，用于填充GPU的InstanceGraphicsBuffer
     public static T* Malloc<T>(uint count) where T : unmanaged
@@ -182,11 +185,16 @@ public unsafe class BatchRendererGroupSetup : MonoBehaviour
 
     void Update()
     {
-        //UpdatePositionsAndColors(Vector3.zero);
-        JobHandle updateInstanceDataJobHandle = default;
-        updateInstanceDataJobHandle = UpdatePositionsAndColorsWithJob(Vector3.zero);
-        updateInstanceDataJobHandle.Complete();
-        gpuPersistentInstanceData.SetData(sysmemBuffer);
+        using (profilerMarker.Auto())
+        {
+            //UpdatePositionsAndColors(Vector3.zero);
+            JobHandle updateInstanceDataJobHandle = default;
+            updateInstanceDataJobHandle = UpdatePositionsAndColorsWithJob(Vector3.zero);
+            updateInstanceDataJobHandle.Complete();
+            gpuPersistentInstanceData.SetData(sysmemBuffer);
+        }
+
+
     }
     
     private void OnDestroy()

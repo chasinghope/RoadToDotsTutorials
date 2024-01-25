@@ -34,7 +34,7 @@ namespace DOTS.DOD.LESSON8
             float deltaTime = SystemAPI.Time.DeltaTime;
             double elapsedTime = SystemAPI.Time.ElapsedTime;
             var generator = SystemAPI.GetSingleton<MultiCubesGenerator>();
-            cubesQuery.SetSharedComponentFilter(new SharingGroup { group = 1 });
+            //cubesQuery.SetSharedComponentFilter(new SharingGroup { group = 1 });
             var cubeEntities = cubesQuery.ToEntityArray(Allocator.Temp);
             var localTransforms = cubesQuery.ToComponentDataArray<LocalTransform>(Allocator.Temp);
             for (int i = 0; i < cubeEntities.Length; i++)

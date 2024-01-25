@@ -14,7 +14,7 @@ namespace DOTS.DOD.LESSON3
         public GameObject cubePrefab = null;
         [Range(1, 10)] public int CubeCount = 6;
         
-        class CubeBaker : Baker<CubeGeneratorByPrefabAuthoring>
+        class Baker : Baker<CubeGeneratorByPrefabAuthoring>
         {
             public override void Bake(CubeGeneratorByPrefabAuthoring authoring)
             {

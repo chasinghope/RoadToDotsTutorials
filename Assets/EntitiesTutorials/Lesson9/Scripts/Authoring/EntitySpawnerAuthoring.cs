@@ -97,23 +97,23 @@ namespace DOTS.DOD.LESSON9
             {
                 var entity = GetEntity(TransformUsageFlags.None);
                 //---使用AllComponentData
-                /*var data = new EntitySpawnerAllComponentData
-                {  
-                    entityProtoType = GetEntity(authoring.protoTypePrefab, TransformUsageFlags.Dynamic),
-                    buildingType = authoring.buildingType,
-                    level = authoring.level,
-                    tickTime = authoring.tickTime,
-                    spawnCountPerTicktime = authoring.spawnCountPerTicktime,
-                    maxLife = authoring.maxLife,
-                    armorType = authoring.armorType,
-                    damageType = authoring.damageType,
-                    maxDamage = authoring.maxDamage,
-                    minDamage = authoring.minDamage,
-                    upgradeTime = authoring.upgradeTime,
-                    upgradeCost = authoring.upgradeCost,
-                    currentlife = authoring.maxLife
-                };
-                AddComponent(data);*/
+                //var data = new EntitySpawnerAllComponentData
+                //{
+                //    entityProtoType = GetEntity(authoring.protoTypePrefab, TransformUsageFlags.Dynamic),
+                //    buildingType = authoring.buildingType,
+                //    level = authoring.level,
+                //    tickTime = authoring.tickTime,
+                //    spawnCountPerTicktime = authoring.spawnCountPerTicktime,
+                //    maxLife = authoring.maxLife,
+                //    armorType = authoring.armorType,
+                //    damageType = authoring.damageType,
+                //    maxDamage = authoring.maxDamage,
+                //    minDamage = authoring.minDamage,
+                //    upgradeTime = authoring.upgradeTime,
+                //    upgradeCost = authoring.upgradeCost,
+                //    currentlife = authoring.maxLife
+                //};
+                //AddComponent(entity, data);
                 //---
 
                 //---使用BlobAssets

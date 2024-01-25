@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace DOTS.DOD.GRAPHICS.LESSON2
 {
+    /// <summary>
+    /// 托管类型的组件
+    /// </summary>
     class CustomMeshAndMaterial : IComponentData
     {
         public Mesh sphere;
